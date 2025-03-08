@@ -1,17 +1,15 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/home";
-import Navbar from "./components/nav";
-import Footer from "./components/footer";
+import { Button, Title } from "@mantine/core";
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
+      <Title order={1} className="text-blue-600 mb-4">
+        Welcome to BethCO
+      </Title>
+      <Button color="orange" size="lg">
+        Test Button
+      </Button>
+    </div>
   );
 }
 
