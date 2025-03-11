@@ -1,16 +1,31 @@
-import { Button, Title } from "@mantine/core";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Common/Header";
+import Footer from "./components/Common/Footer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+// import Programs from "./pages/Programs";
+// import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
-      <Title order={1} className="text-blue-600 mb-4">
-        Welcome to BethCO
-      </Title>
-      <Button color="orange" size="lg">
-        Test Button
-      </Button>
-    </div>
+    <Router>
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            {/* <Route path="/programs" element={<Programs />} /> */}
+            {/* <Route path="/contact" element={<Contact />} /> */}
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
 export default App;
+
+// #0D9488
+// #4B5563
